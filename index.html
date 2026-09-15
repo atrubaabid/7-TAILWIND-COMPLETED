@@ -631,96 +631,537 @@
      <!-- 
      
      grid
+
+     [GRID-COL]
+
+     grid-cols-1
+     grid-cols-2
+     grid-cols-3
+     grid-cols-4
+     grid-cols-5
+     grid-cols-6
+     grid-cols-7
+     grid-cols-8
+     grid-cols-9
+     grid-cols-10
+     grid-cols-11
+     grid-cols-12
+
+     [COLS-CUSTOM-CLASSES]
+
+     [grid-template-columns:200px_1fr_100px]
+     grid-cols-[200px_1fr_100px]
+
+     [GRID-ROW]
+
+     grid-rows-1
+     grid-rows-2
+     grid-rows-3
+     grid-rows-4
+     grid-rows-5
+     grid-rows-6
+
+     [GAP]
+
+     gap-0 to gap-16
+     gap-0 to gap-12
+     gap-x-5    => left right direction gap
+     gap-y-5    => top bottom direction gap
+     gap-[25px]
+     gap-x-[30px]
+     gap-y-[30px]
+
+     [COLUMN-SPAN] => koi item kitne columns ki jagah lega.
+
+     col-span-2
+     col-span-full
+     col-span-[2]  => CUSTOM CLASS
+
+     [ROW-SPAN] 
+
+     row-span-1
+     row-span-2
+     row-span-3
+     row-span-4
+     row-span-5
+     row-span-6
+     row-span-full
+
+     [SPECIFIC COLUMN POSITION]  =>  Aap item ko specific column se start bhi karwa sakte ho.
+
+     [COL-START]
+
+     col-start-1
+     col-start-2
+     col-start-3
+     ...
+     col-start-13   
+
+     [COL-END]
+
+     col-start-1
+     col-start-2
+     col-start-3
+     ...
+     col-start-13 
+
+     [ROW-START]
+     row-start-1
+     row-start-2
+     row-start-3
+     ...
+     row-start-7  
      
+     [ROW-END]
+     row-start-1
+     row-start-2
+     row-start-3
+     ...
+     row-start-7 
+
+     [GRID-FLOW]  =>  Ye decide karta hai items grid mein kis direction/order mein place honge.
+     grid-flow-row
+     grid-flow-col
+
      -->
 
 
 
+     <!-- ==================================================================================================================================== -->
 
 
 
+     <!-- 21. POSITION -->
 
+     <!-- static    =>   Default position
+           relative
+           absolute
+           fixed
+           sticky 
+           
+           top-0
+           bottom-0
+           left-0
+           right-0
+           
+           Z-INDEX  =>   Z-index decide karta hai ke overlapping elements mein kaun upar hoga
+           z-0
+           z-10
+           z-20
+           z-30
+           z-40
+           z-50
+           z-auto
+           z-[100]
+           z-[9999]
 
+           -->
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     <!-- 4. TAILWIND BREAKPOINTS AND CUSTOMIZATION -->
-
-     <!-- screens: {
-
-        'xs': '300px'
-        /* // => @media (min-width: 300px) { ... } */
-
-        'sm': '640px',
-        /* // => @media (min-width: 640px) { ... } */
-
-        'md': '768px',
-        /* // => @media (min-width: 768px) { ... } */
-
-        'lg': '1024px',
-        /* // => @media (min-width: 1024px) { ... } */
-
-        'xl': '1280px',
-        /* // => @media (min-width: 1280px) { ... } */
-
-        '2xl': '1536px',
-        /* // => @media (min-width: 1536px) { ... } */
-    } -->
-
-     <!-- <p class="text-center md:text-orange-400 text-amber-300">Atruba</p> -->
 
 
 
      <!-- ==================================================================================================================================== -->
+
+
+
+     <!-- 22. RESPONSIVE DESIGN -->
+
+     <!-- Responsive Prefixes
+
+        | Prefix | Minimum width |
+        | ------ | ------------: |
+        | `sm:`  |         640px |
+        | `md:`  |         768px |
+        | `lg:`  |        1024px |
+        | `xl:`  |        1280px |
+        | `2xl:` |        1536px |
+
+        0px ───────── 639px  =>  Yani 0–639px ke liye text-sm hi tumhara XS style hai.
+
+        sm  =>  Jab screen 640px ya us se zyada ho, ye style apply karo and same for all
+
+
+
+        ⭐ Custom Breakpoint  =>  Agar tum chahte ho ke 900px se neeche style apply ho:
+
+
+        [METHOD 1]
+
+        <div class="text-4xl min-[900px]:text-xl">   =>   900px+ par kam krega.
+
+        <div class="text-4xl max-[900px]:text-xl">  =>  900px ya us sy neechy kam krega.
+
+        [METHOD 2]
+
+        write this in input.css
+
+        @theme {
+        --breakpoint-xs: 480px;
+        }
+
+        now ypu can use xs as well like others:-
+
+        <div class="text-sm xs:text-lg sm:text-xl">
+        Hello
+       </div>
+
+       Meaning:
+       0–479px       → text-sm
+       480px+        → text-lg
+       640px+        → text-xl
+-->
+
+     <div
+          class="my-[40px] text-center bg-amber-200 sm:bg-amber-700 md:bg-cyan-300 lg:bg-orange-400 xl:bg-pink-400 2xl:bg-stone-400">
+          BREAK-POINTS</div>
+
+
+
+
+
+     <!-- ==================================================================================================================================== -->
+
+     <!-- 23. OPACITY -->
+
+     <!-- | Tailwind      |             CSS |
+          | ------------- | --------------: |
+          | `opacity-0`   |    `opacity: 0` |
+          | `opacity-5`   | `opacity: 0.05` |
+          | `opacity-10`  |  `opacity: 0.1` |
+          | `opacity-20`  |  `opacity: 0.2` |
+          | `opacity-25`  | `opacity: 0.25` |
+          | `opacity-30`  |  `opacity: 0.3` |
+          | `opacity-40`  |  `opacity: 0.4` |
+          | `opacity-50`  |  `opacity: 0.5` |
+          | `opacity-60`  |  `opacity: 0.6` |
+          | `opacity-70`  |  `opacity: 0.7` |
+          | `opacity-75`  | `opacity: 0.75` |
+          | `opacity-80`  |  `opacity: 0.8` |
+          | `opacity-90`  |  `opacity: 0.9` |
+          | `opacity-100` |    `opacity: 1` |   
+          
+          CUSTOM CLASSES
+
+          opacity-[37%]
+          opacity-[0.37]
+          
+          -->
+
+
+
+
+
+     <!-- ==================================================================================================================================== -->
+
+
+
+     <!-- 24. HOVER -->
+
+     <!-- hover:bg-blue-500 -->
+
+
+
+
+     <!-- ==================================================================================================================================== -->
+
+
+
+
+
+     <!-- 25. FOCUS -->
+
+     <!-- focus:border-blue-500 -->
+
+
+
+
+     <!-- ==================================================================================================================================== -->
+
+
+
+
+     <!-- 26. ACTIVE -->
+
+     <!-- active:bg-blue-700 -->
+
+
+
+
+     <!-- ==================================================================================================================================== -->
+
+     <!-- 27. DISABLE -->
+
+     <!-- disabled:cursor-not-allowed -->
+
+
+
+     <!-- ==================================================================================================================================== -->
+
+
+
+     <!-- 28. TRANSITION -->
+
+     <!-- 
+     
+     transition
+
+     duration-75
+     duration-100
+     duration-150
+     duration-200
+     duration-300
+     duration-500
+     duration-700
+     duration-1000
+     duration-[750ms]  ->  custom class
+
+
+     ease-linear
+     ease-in
+     ease-out
+     ease-in-out
+
+     delay-300
+     delay-[750ms]   ->  custom class
+
+
+
+       -->
+
+     <div class="bg-amber-300 p-5 text-center hover:bg-cyan-400 duration-1000 transition ease-in ">TRANSITION</div>
+
+
+
+     <!-- ==================================================================================================================================== -->
+
+
+     <!-- 29. TRANSFORM -->
+
+     <!-- scale-50
+          scale-75
+          scale-90
+          scale-95
+          scale-100
+          scale-105
+          scale-110
+          scale-125
+          scale-150
+          scale-200 
+          scale-[1.15]  ->  custom class
+
+          rotate-0
+          rotate-1
+          rotate-2
+          rotate-3
+          rotate-6
+          rotate-12
+          rotate-45
+          rotate-90
+          rotate-180
+          rotate-[27deg]  ->  custom class 
+
+          translate
+          -translate
+          translate-x-10
+          translate-y-10
+          -translate-x-10
+          -translate-y-10
+          translate-x-[10px]  ->  custom class 
+          translate-y-[10px]  ->  custom class 
+
+
+          skew-y-12
+          skew-y-12
+          -skew-y-12
+          -skew-y-12
+          skew-x-[25deg] ->  custom class 
+
+     -->
+
+
+
+     <!-- ==================================================================================================================================== -->
+
+
+
+     <!-- 30. GROUP HOVER -->
+
+     <!-- group   ->   to the parent
+          group-hover:scale-110   ->   to the child -->
+
+
+
+     <!-- ==================================================================================================================================== -->
+
+
+     <!-- 31. GRADIANT -->
+
+
+     <!-- bg-gradient-to-r from-red-500 to-blue-500
+     h-14 bg-linear-to-t from-sky-500 to-indigo-500
+     bg-linear-to-bl from-violet-500 to-fuchsia-500 -->
+
+     <!-- from-red-500
+                ↓
+          starting color
+
+          via-yellow-500
+                ↓
+          middle color
+
+          to-blue-500
+                ↓
+          ending color -->
+
+
+     <!-- FOR TEXT GRADIANT -->
+     <!-- bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent -->
+
+
+
+     <!-- ==================================================================================================================================== -->
+
+
+
+     <!-- 32. ANIMATION -->
+
+     <!-- animate-spin
+          animate-ping
+          animate-pulse
+          animate-bounce -->
+
+
+     <!-- CUSTOM ANIMATION -->
+     <!-- 
+
+     @theme {
+    --animate-wiggle: wiggle 1s ease-in-out infinite;
+
+    @keyframes wiggle {
+        0%, 100% {
+            transform: rotate(-3deg);
+        }
+
+        50% {
+            transform: rotate(3deg);
+        }
+    }
+} 
+    -->
+
+
+     <div class=" animate-myanimation pb-[20px]">Animation</div>
+
+
+
+     <!-- ==================================================================================================================================== -->
+
+     <!-- @theme — Complete Custom Classes Example -->
+
+     <!-- watch that all classes in input.css file -->
+
+     <div class=" font-jost bg-primary  m-myspace shadow-card rounded-box text-center animate-pulse">CUSTOM CLASSES
+     </div>
+
+
+
+
+     <!-- ==================================================================================================================================== -->
+
+
+
+
+     <!-- COMPLETED -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
